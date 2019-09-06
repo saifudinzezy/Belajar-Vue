@@ -1,6 +1,7 @@
 <template>
+<!-- root component and main.js-->
   <!-- <h2>Server Status: {{ status  }}</h2> -->
-  <app-server-status></app-server-status>
+  <app-servers></app-servers>
 </template>
 
 <script>

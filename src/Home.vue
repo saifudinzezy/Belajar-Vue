@@ -1,24 +1,20 @@
 <template>
-<!-- harus memiliki pembungkus dan hanya boleh memlikik 1 root template -->
   <div>
-    <p>Server Status: {{ status }}</p>
-    <hr />
-    <button @click="chengeStatus">Change Status</button>
+    <!-- looping element menjadi 5 -->
+    <!-- default value => server = 1 -->
+    <app-serve-status v-for="server in 5">
+    </app-serve-status>
   </div>
 </template>
 
 <script>
+//import ServerStatus.vue
+import ServerStatus from "./ServerStatus.vue"; //jgn lupa titik koma
+
 export default {
-  data() {
-    return {
-      status: "Critical"
-    };
-  },
-  methods: {
-    //penulisan fungsi dengan es-6
-    chengeStatus() {
-      this.status = "Normal"; //jgn lupa titik koma
-    }
+  components: {
+    //local component
+    'app-serve-status': ServerStatus
   }
 };
 </script>
